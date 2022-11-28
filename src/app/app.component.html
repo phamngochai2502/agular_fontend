@@ -314,7 +314,7 @@
                 </div>
                 <div class="stat-cards-info">
                   <p class="stat-cards-info__num">60%</p>
-                  <p class="stat-cards-info__title">Độ ẩm đất</p>
+                  <p class="stat-cards-info__title">Độ ẩm</p>
                   <p class="stat-cards-info__progress">
                     <span class="stat-cards-info__profit success">
                       <img src="../assets/img/svg/trending-up.svg">
@@ -332,7 +332,7 @@
                 </div>
                 <div class="stat-cards-info">
                   <p class="stat-cards-info__num">51%</p>
-                  <p class="stat-cards-info__title">Độ ẩm không khí</p>
+                  <p class="stat-cards-info__title">Ánh sáng</p>
                   <p class="stat-cards-info__progress">
                     <span class="stat-cards-info__profit danger">
                       <img src="../assets/img/svg/trending-down.svg">
@@ -350,7 +350,7 @@
                 </div>
                 <div class="stat-cards-info">
                   <p class="stat-cards-info__num">13%</p>
-                  <p class="stat-cards-info__title">Độ bão hoà dinh dưỡng</p>
+                  <p class="stat-cards-info__title">Tổng quan</p>
                   <p class="stat-cards-info__progress">
                     <span class="stat-cards-info__profit warning">
                       <img src="../assets/img/svg/trending-up.svg">
@@ -402,15 +402,28 @@
             </div>
             <div class="col-md-6 col-xl-6">
               <article class="stat-cards-item">
+
+
                 <div class="chartNew">
                   <canvas id="bar4"></canvas>
+                  <form #formName="ngForm" (ngSubmit)="onName(formName.value)">
+                    <label>View chi tiết theo : </label>
+                    <input type="text" name="pName" ngModel>
+                    <input type="submit" value="Chọn">
+                  </form>
+
                 </div>
               </article>
+
+
             </div>
           </div>
 
         </div>
+
+
       </main>
+
 
 
       <!-- ! Footer -->
@@ -436,6 +449,13 @@
   <script src="/assets/plugins/feather.min.js"></script>
   <!-- Custom scripts -->
   <script src="/assets/js/script.js"></script>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+      $scope.names = ["Emil", "Tobias", "Linus"];
+    });
+  </script>
 </body>
 
 </html>
